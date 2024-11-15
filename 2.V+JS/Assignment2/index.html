@@ -72,7 +72,11 @@
       const DisplayMsgResult = document.getElementById("displayMsgResult");
       DisplayMsgBtn.addEventListener("click", function () {
         const userMsg =  displayMsgInput.value
-        DisplayMsgResult.textContent = `You said ${userMsg}`
+        if (userMsg === "Yes" || userStudent === "No") {
+          DisplayMsgResult.textContent ="Valid Response."
+        }else{
+          DisplayMsgResult.textContent ="Invalid Response. Please enter 'Yes' or 'No'"
+        }
       });
 
       const numberInput = document.getElementById("numberInput");
